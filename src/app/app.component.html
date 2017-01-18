@@ -1,3 +1,68 @@
-<h1>
-  {{title}}
-</h1>
+
+
+<!-- Static navbar -->
+<nav  class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand top-logo" href="#"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+
+
+      <ul class="nav navbar-nav form-inline">
+        <a routerLink="/login" routerLinkActive="active">Login</a>
+
+
+        <span>Backend API </span>
+
+        <select class="form-control input-sm" [(ngModel)]="selectedApi">
+          <option *ngFor="let api of apis" [ngValue]= p>
+            {{api.name}}
+          </option>
+        </select>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container-fluid -->
+</nav>
+
+
+
+
+<div class="container">
+  <div class="col-sm-8">
+
+    <router-outlet></router-outlet>
+
+  </div>
+  <div class="col-sm-4">
+
+    <log [logitems]="backendService.logitems"></log>
+
+
+  </div>
+
+  <!--
+      <div *ngFor="#e of backendService.errors|async">
+          <div class="alert alert-dismissible alert-danger">
+              <button type="button" class="close" data-dismiss="alert">&times;</button>
+              <h4>An backend error occurred</h4>
+              <p>{{e.created}}</p>
+
+              <p><i>{{e.reason}}</i></p>
+          </div>
+
+      </div>
+  -->
+
+
+</div>
+

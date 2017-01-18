@@ -1,0 +1,46 @@
+
+
+<div>
+    <div class="col-sm-4 col-sm-offset-4 well2" >
+
+
+        <img src="/img/logo.jpg" class="img-responsive center-block">
+        <br>
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="input-field col-sm-12">
+                    <label for="email">Email</label>
+
+
+                    <select [(ngModel)]="username" class="form-control">
+
+
+                        <option value="root">root</option>
+                        <option value="martin.karrin@captor.se">martin.karrin@captor.se</option>
+                        <option value="admin@dnbmarkets.com">admin@dnbmarkets.com</option>
+                        <option value="admin@abgsundalcollierasa.com">admin@abgsundalcollierasa.com</option>
+                        <option value="slim@mktbeam.com">slim@mktbeam.com</option>
+                        <option value="ola@mktbeam.com">ola@mktbeam.com</option>
+
+                    </select>
+
+
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col-sm-12">
+                    <label for="email">Password</label>
+                    <input [(ngModel)]="password" id="password"
+                           type="password" class="form-control validate">
+
+                </div>
+            </div>
+
+            <br>
+            <button (click)="login()" class="btn btn-default" type="submit" name="action">Login</button>
+            <div *ngIf="errorMsg" class="alert alert-danger" role="alert">{{errorMsg}}</div>
+        </div>
+    </div>
+</div>
