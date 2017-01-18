@@ -1,0 +1,45 @@
+
+
+            <input class="form-control input-sm"  placeholder="ENTER - New, SHIFT+ENTER - Add" (keyup.shift.enter)="updateRFQ(query)" (keyup.enter)="newRFQ(query)"[(ngModel)]="query"/>
+            <input type="text">
+
+
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#allrfqs"  role="tab" data-toggle="tab">All RFQs</a></li>
+                <li role="presentation" ><a href="#localrfqs"  role="tab" data-toggle="tab">Local RFQs</a></li>
+                <li role="presentation" ><a href="#remoterfqs"  role="tab" data-toggle="tab">Remote RFQs</a></li>
+
+
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+
+                <!-- Settings tab -->
+                <div role="tabpanel" class="tab-pane active" id="allrfqs">
+                    <h4>All RFQs</h4>
+                    <rfq-list [rfqs]="rfqService.rfqs"></rfq-list>
+
+
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="localrfqs">
+                    <h4>Local RFQs</h4>
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="remoterfqs">
+                    <h4>Remote RFQs</h4>
+
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+

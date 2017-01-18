@@ -1,0 +1,60 @@
+
+
+<h1>RFQ Details</h1>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#settings"  role="tab" data-toggle="tab">Settings</a></li>
+                <li role="presentation" ><a href="#structure"  role="tab" data-toggle="tab">Financial Structure</a></li>
+                <li role="presentation" ><a href="#counterparties"  role="tab" data-toggle="tab">Counterparties</a></li>
+                <li role="presentation" ><a href="#counterparties"  role="tab" data-toggle="tab">Answers</a></li>
+            </ul>
+
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Settings tab -->
+                <div role="tabpanel" class="tab-pane active" id="settings">
+                    <h4>Settings</h4>
+
+                    <table class="table">
+                        <tr>
+                            <td>Id:</td><td>{{rfq.id}}</td>
+                        </tr>
+                        <tr>
+                            <td>SeqNo:</td><td>{{rfq.seqNo}}</td>
+                        </tr>
+                        <tr>
+                            <td>State:</td><td>{{rfq.state}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="structure">
+                    <h4>Financial Structure</h4>
+
+                    <pre>{{rfq.parserStructures|json}}</pre>
+
+
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="counterparties">
+                    <h4>Counterparties</h4>
+                </div>
+                <div role="tabpanel" class="tab-pane" id="answers">
+                    <h4>RFQ Answers</h4>
+
+                </div>
+
+            </div>
+            <div>
+                <h3>Chat threads....</h3>
+
+                <div *ngFor="let t of rfq.messageThreads">
+                    <message-thread [thread]="t"></message-thread>
+                </div>
+
+
+
+            </div>
+            <pre>{{rfq|json}}</pre>
+
+
